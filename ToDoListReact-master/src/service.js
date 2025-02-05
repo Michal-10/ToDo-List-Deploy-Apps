@@ -34,8 +34,11 @@ export default {
   },
 
   setCompleted: async (id, isComplete) => {
+    // console.log('setCompleted', { id, isComplete });
+    // const result = await axios.put(`/tasks/${id}`, isComplete );
+    // return result.data;
     console.log('setCompleted', { id, isComplete });
-    const result = await axios.put(`/tasks/${id}`, isComplete );
+    const result = await axios.put(`/api/items/${id}?iscomplete=${isComplete}`, { id, isComplete });
     return result.data;
   },
 
