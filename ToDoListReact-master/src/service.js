@@ -19,12 +19,12 @@ axios.interceptors.response.use(
 export default {
   getTasks: async () => {
     const result = await axios.get('/tasks');
-    if (Array.isArray(result.data))
+    // if (Array.isArray(result.data))
       return result.data
-    else {
-      alert("no tasks");
-      return [];
-    }
+    // else {
+    //   alert("no tasks");
+    //   return [];
+    // }
   },
 
   addTask: async (name) => {
