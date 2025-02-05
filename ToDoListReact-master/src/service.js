@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = process.env.API_URL;
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 //  "http://localhost:5080"
 
 // הוספת Interceptor לתפיסת שגיאות ורישום ללוג
