@@ -63,13 +63,13 @@ app.MapPost("/tasks", async (ToDoDbContext context, Item newTask) =>
 });
 
 // עדכון משימה
-app.MapPut("/tasks/{id}", async (int id, ToDoDbContext context, Item updatedTask) =>
+app.MapPut("/tasks/{id}", async (int id, ToDoDbContext context, bool isComplete) =>
 {
     var task = await context.Items.FindAsync(id);
     if (task == null) return Results.NotFound();
 
-    task.Name = updatedTask.Name;
-    task.IsComplete = updatedTask.IsComplete;
+    // task.Name = updatedTask.Name;
+    task.IsComplete = isComplete;
     await context.SaveChangesAsync();
     return Results.Ok(task);
 });
