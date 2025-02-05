@@ -11,7 +11,7 @@ axios.interceptors.response.use(
       status: error.response?.status,
       data: error.response?.data
     });
-    return Promise.reject(error); // החזרת השגיאה להמשך טיפול
+    return Promise.reject(error); 
   }
 );
 

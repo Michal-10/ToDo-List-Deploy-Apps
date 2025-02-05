@@ -84,6 +84,6 @@ app.MapDelete("/tasks/{id}", async (int id, ToDoDbContext context) =>
     return Results.NoContent();
 });
 
-app.MapGet("/", () => "Hello World!");
-
+app.MapGet("/", () => "TodoApi is running");
+// app.UseAuthentication();
 app.Run();
