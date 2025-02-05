@@ -11,7 +11,7 @@ const RENDER_API_URL = "https://api.render.com/v1/services";
 const API_KEY = 'rnd_SsQxCHohB8tkk4uyy0PzVZi6p6TQ';
 
 // נקודת קצה שמחזירה את רשימת האפליקציות
-app.get("/apps", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const response = await axios.get(RENDER_API_URL, {
       headers: {
