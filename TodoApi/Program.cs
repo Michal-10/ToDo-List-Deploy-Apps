@@ -8,7 +8,7 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ToDoDbContext>(options =>
-    options.UseMySql("server=localhost;user=root;password=aA1795aA;database=ToDoDB",
+    options.UseMySql(builder.Configuration.GetConnectionString("ToDoDB"),
     Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.41-mysql")));
 
 
