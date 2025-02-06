@@ -24,10 +24,6 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 
-var app = builder.Build();
-// הפעלת מדיניות CORS
-app.UseCors("AllowSpecificOrigins"); 
-  
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
@@ -38,6 +34,7 @@ builder.Services.AddCors(options =>
     });
 });
 
+var app = builder.Build();
 app.UseSwagger();
 
 // הפעלת Swagger UI
@@ -48,6 +45,8 @@ app.UseSwaggerUI(options =>
 });
 
 
+// הפעלת מדיניות CORS
+app.UseCors("AllowSpecificOrigins");
 
 app.MapGet("/tasks", async (ToDoDbContext context) =>
 {
