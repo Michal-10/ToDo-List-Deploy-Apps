@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
-console.log(process.env.REACT_APP_API_URL);
-
 
 // הוספת Interceptor לתפיסת שגיאות ורישום ללוג
 axios.interceptors.response.use(
